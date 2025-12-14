@@ -1,0 +1,306 @@
+/* -------------------------------------- */
+/* 1. ESTILOS BASE: MOBILE-FIRST (Columna única) */
+/* -------------------------------------- */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; 
+}
+
+#login-container {
+    padding: 20px;
+    background-color: white; 
+}
+
+#image-column {
+    display: none; 
+}
+
+/* * Encabezado y Logo */
+.logo-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.espe-main-logo {
+    max-width: 200px; 
+    height: auto;
+}
+
+/* * Formulario */
+.login-form-box input {
+    width: 90%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ESTILO DEL BOTÓN: NEGRO/GRIS OSCURO */
+.ingresar-btn {
+    width: 95%;
+    padding: 12px;
+    background-color: #333; 
+    color: white;
+    border: none;
+    border-radius: 2px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 10px 2.5%;
+}
+
+/* * Enlaces de Ayuda */
+.help-links {
+    text-align: left;
+    margin: 15px 2.5%; 
+    font-size: 0.9em;
+}
+
+.help-links p {
+    margin: 5px 0; 
+    padding: 0;
+}
+
+.help-links a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+/* * Toolbar de iconos (i, lupa, ?) */
+.info-toolbar {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.toolbar-icon {
+    font-size: 1.2em;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+/* * Información General y Footer */
+.general-info {
+    margin: 40px 0 20px 0;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.general-info h3 {
+    color: #333;
+    font-size: 1em;
+}
+
+.general-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.general-info li {
+    padding: 5px 0;
+    font-size: 0.9em;
+}
+
+.general-info a {
+    color: #3498db;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.general-info span {
+    margin-right: 8px;
+    font-size: 1.1em;
+    color: #3498db;
+}
+
+.footer-info {
+    margin-top: 30px;
+    font-size: 0.75em;
+    text-align: center;
+    color: #666;
+}
+
+.miespe-footer-logo {
+    max-width: 100px;
+    display: block;
+    margin: 10px auto;
+}
+
+.copyright {
+    color: #3498db; 
+    margin-bottom: 5px;
+}
+
+.unit-info {
+    font-weight: normal; 
+    color: #333;
+}
+
+
+/* ** SIMULACIÓN DE ICONOS ** */
+.icon-camera::before { content: '📷'; margin-left: 5px; color: #3498db; }
+.icon-info-circle::before { content: 'i'; color: green; }
+.icon-search-large::before { content: '🔍'; color: #3498db; }
+.icon-question::before { content: '?'; color: black; }
+.icon-student::before { content: '👤'; }
+.icon-matricula::before { content: '📄'; }
+.icon-search::before { content: '🔍'; }
+
+
+/* -------------------------------------- */
+/* 2. MEDIA QUERY: VISTA ESCRITORIO (min-width: 768px) */
+/* -------------------------------------- */
+
+@media (min-width: 768px) {
+    /* ** LAYOUT DE DOS COLUMNAS USANDO GRID ** */
+    #login-container {
+        display: grid;
+        grid-template-columns: 2fr 1.3fr; 
+        min-height: 100vh;
+        padding: 0;
+        max-width: 1300px; 
+        margin: 0 auto;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    /* Columna de la imagen */
+    #image-column {
+        display: block;
+        background-image: url("sidebar-4.jpg"); 
+        background-size: cover;
+        background-position: center center;
+        position: relative;
+    }
+
+    .info-overlay {
+        position: absolute;
+        bottom: 100px; 
+        left: 20px;
+        font-size: 1.2em;
+        padding: 0;
+    }
+
+    /* ** Rótulo 1: SISTEMA INTEGRADO DE INFORMACIÓN (Más estrecho, Fondo negro) ** */
+    .info-overlay h1 {
+        margin: 5px 0;
+        background-color: black; 
+        color: white; 
+        width: 320px; /* Ancho fijo para simular la referencia */
+        padding: 5px 10px;
+        font-size: 1.2em; 
+    }
+    
+    /* ** Rótulo 2: INVESTIGACIÓN (Más ancho, Fondo blanco) ** */
+    .info-overlay p {
+        margin: 5px 0;
+        background-color: white; 
+        color: black; 
+        width: 360px; /* Ancho fijo para simular la referencia */
+        padding: 5px 10px;
+        font-size: 1.4em; /* Texto más grande y en negrita */
+        font-weight: bold;
+    }
+
+
+    /* Columna del formulario (Login) */
+    #form-column {
+        padding: 40px 30px; 
+    }
+    
+    .espe-main-logo {
+        max-width: 90%; 
+        margin: 0 auto 30px auto;
+    }
+
+    /* Formulario */
+    .login-form-box input {
+        width: 100%;
+        margin: 0 0 15px 0;
+    }
+    
+    .ingresar-btn {
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    /* * Enlaces de Ayuda (Estilo Compacto) */
+    .help-links {
+        margin: 5px 0 30px 0; 
+        text-align: left;
+        line-height: 1.2; 
+        font-size: 0.85em; 
+    }
+    
+    .help-links p {
+        margin: 0; 
+        padding: 2px 0; 
+    }
+
+    /* ** Toolbar de iconos ** */
+    .info-toolbar {
+        display: flex;
+        justify-content: flex-start; 
+        align-items: center;
+        margin-bottom: 20px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #eee; 
+    }
+
+    .toolbar-icon {
+        margin-right: 15px;
+        font-size: 1.1em;
+    }
+
+    /* ** INFORMACIÓN GENERAL AJUSTADA ** */
+    .general-info {
+        text-align: left;
+        padding-top: 10px;
+        border-top: none; 
+        margin: 30px 0 20px 0;
+    }
+
+    .general-info ul {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .general-info li {
+        padding: 3px 0; 
+        font-size: 0.85em; 
+    }
+
+    /* ** FOOTER (Pie de página) ** */
+    .footer-info {
+        text-align: center; 
+        margin-top: 50px;
+    }
+
+    .miespe-footer-logo {
+        display: block; 
+        margin: 0 auto 5px auto; 
+        max-width: 100px;
+    }
+
+    .footer-text-block p {
+        margin: 0;
+        padding: 1px 0;
+        font-size: 0.75em;
+        color: #666; 
+    }
+    
+    .footer-text-block .copyright {
+        color: #3498db; 
+        font-size: 0.75em;
+    }
+    
+    .footer-text-block .unit-info {
+        font-weight: bold;
+        color: #333; 
+        font-size: 0.8em;
+    }
+}
